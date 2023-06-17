@@ -104,6 +104,15 @@ internal class ChatCommands
                             ? $"<color={Main.HideColor.Value}>{Main.HideName.Value}</color>"
                             : $"<color={Main.ModColor}>{Main.HideName.Value}</color>";
                     break;
+                  
+                 case "/id":
+                if (Options.ApplyModeratorList.GetValue() == 0 || !IsPlayerModerator(player.FriendCode)) break;
+
+                string msgText = GetString("PlayerIdList");
+                foreach (var pc in Main.AllPlayerControls)
+                    msgText += "\n" + pc.PlayerId.ToString() + " → " + Main.AllPlayerNames[pc.PlayerId];
+                Utils.SendMessage(msgText, player.PlayerId);
+                break;
 
                 case "/level":
                     canceled = true;
