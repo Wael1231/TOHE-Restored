@@ -11,6 +11,7 @@ using TOHE.Modules;
 using TOHE.Roles.Crewmate;
 using UnityEngine;
 using static TOHE.Translator;
+using AmongUs.GameOptions;
 
 namespace TOHE;
 
